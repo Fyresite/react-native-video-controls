@@ -256,7 +256,8 @@ export default class VideoPlayer extends Component {
         const delta =  time - state.lastScreenPress;
 
         if ( delta < 300 ) {
-            this.methods.toggleFullscreen();
+            typeof this.props.onDoubleTap === 'function' &&
+                this.props.onDoubleTap();
         }
 
         this.methods.toggleControls();
@@ -1108,6 +1109,7 @@ export default class VideoPlayer extends Component {
     render() {
         return (
             <TouchableWithoutFeedback
+                
                 onPress={ this.events.onScreenTouch }
                 style={[ styles.player.container, this.styles.containerStyle ]}
             >
