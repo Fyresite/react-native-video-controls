@@ -319,7 +319,7 @@ export default class VideoPlayer extends Component {
             ),
             Animated.timing(
                 this.animations.topControl.marginTop,
-                { toValue: -100 }
+                { toValue: 0 }
             ),
             Animated.timing(
                 this.animations.bottomControl.opacity,
@@ -327,7 +327,7 @@ export default class VideoPlayer extends Component {
             ),
             Animated.timing(
                 this.animations.bottomControl.marginBottom,
-                { toValue: -100 }
+                { toValue: 0 }
             ),
         ]).start();
     }
